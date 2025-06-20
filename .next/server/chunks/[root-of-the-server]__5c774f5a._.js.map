@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 60, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/novok/repos/ads/src/app/api/auth/logout/route.ts"],"sourcesContent":["import { NextResponse } from 'next/server';\r\nimport { serialize } from 'cookie';\r\n\r\nexport async function POST() {\r\n    const response = NextResponse.json({ message: 'Logged out' });\r\n\r\n    response.headers.set(\r\n        'Set-Cookie',\r\n        serialize('token', '', {\r\n        httpOnly: true,\r\n        secure: process.env.NODE_ENV === 'production',\r\n        path: '/',\r\n        maxAge: 0, // удаляет куку\r\n        sameSite: 'lax',\r\n        })\r\n    );\r\n\r\n    return response;\r\n}"],"names":[],"mappings":";;;AAAA;AACA;;;AAEO,eAAe;IAClB,MAAM,WAAW,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;QAAE,SAAS;IAAa;IAE3D,SAAS,OAAO,CAAC,GAAG,CAChB,cACA,CAAA,GAAA,yIAAA,CAAA,YAAS,AAAD,EAAE,SAAS,IAAI;QACvB,UAAU;QACV,QAAQ,oDAAyB;QACjC,MAAM;QACN,QAAQ;QACR,UAAU;IACV;IAGJ,OAAO;AACX","debugId":null}}]
+}

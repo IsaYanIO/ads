@@ -1,0 +1,501 @@
+type: collection.insomnia.rest/5.0
+name: Ads
+meta:
+  id: wrk_edae2ea7b7824907a6919aa5d79a0e7b
+  created: 1750421904367
+  modified: 1750421904367
+collection:
+  - name: Category
+    meta:
+      id: fld_5c11b34609e945c9ad5ce7ea9fc2cb90
+      created: 1750421999584
+      modified: 1750421999584
+      sortKey: -1750421999584
+    children:
+      - url: "{{ _.url }}/category"
+        name: Create
+        meta:
+          id: req_1d7ab1e43510496b9a05089f2315d8a8
+          created: 1750422001698
+          modified: 1750430010807
+          isPrivate: false
+          sortKey: -1750422934004
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "Electronics"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/category"
+        name: Read All
+        meta:
+          id: req_69e11b74912148e2a1d8dc30ac5eb17d
+          created: 1750422631412
+          modified: 1750430013875
+          isPrivate: false
+          sortKey: -1750422933854
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/category/:id"
+        name: Read
+        meta:
+          id: req_bee17801630546e6918d74b94857c3b2
+          created: 1750422788693
+          modified: 1750430012589
+          isPrivate: false
+          sortKey: -1750422933904
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: id
+            value: "2"
+      - url: "{{ _.url }}/category/:id"
+        name: Update
+        meta:
+          id: req_413c451c5a2a46cbb57a4aeea5d648fc
+          created: 1750422842301
+          modified: 1750430015320
+          isPrivate: false
+          sortKey: -1750422933829
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "New Elecronics"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: id
+            value: "2"
+      - url: "{{ _.url }}/category/:id"
+        name: Delete
+        meta:
+          id: req_f2e0a7afc35d4e919ef88f3ed6bfc466
+          created: 1750422933804
+          modified: 1750430016150
+          isPrivate: false
+          sortKey: -1750422933804
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: id
+            value: "2"
+  - name: Ads
+    meta:
+      id: fld_0a110e34ef814af0a2e7a05d293da45e
+      created: 1750423022093
+      modified: 1750423022093
+      sortKey: -1750423022093
+    children:
+      - url: "{{ _.url }}/ads"
+        name: Create
+        meta:
+          id: req_4aab496a0ac0409fbf9f5d36409209dd
+          created: 1750423024584
+          modified: 1750429988587
+          isPrivate: false
+          sortKey: -1750423950052
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "title": "Продаётся ноутбук MacBook Pro",
+              "description": "Состояние отличное, в комплекте зарядное устройство.",
+              "categoryId": 3,
+              "price": 1200.5
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/ads"
+        name: Get All
+        meta:
+          id: req_985421e609d54396aae4b72b91f95544
+          created: 1750423565045
+          modified: 1750430004415
+          isPrivate: false
+          sortKey: -1750423950002
+        method: GET
+        parameters:
+          - id: pair_41d06a0926cf4ff1ab42d63ef861dec5
+            name: categoryId
+            disabled: false
+          - id: pair_94ed6aa2092b4e969131870ac8121824
+            name: minPrice
+            disabled: false
+          - id: pair_04481c583d54436797963f048d8d0ef8
+            name: maxPrice
+            disabled: false
+          - id: pair_06c1dacff3a34b5b8d2668e7448a5605
+            name: sortByPrice
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/ads/:id"
+        name: Update
+        meta:
+          id: req_52855a42400349cd91b34e081cc11257
+          created: 1750423949952
+          modified: 1750430007122
+          isPrivate: false
+          sortKey: -1750423949952
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "title": "Продаётся ноутбук MacBook Pro",
+              "description": "Состояние отличное, в комплекте зарядное устройство.",
+              "categoryId": 3,
+              "price": 1500.0
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: id
+            value: "6"
+      - url: "{{ _.url }}/ads/:id"
+        name: Delete
+        meta:
+          id: req_353f286a512f48f4802a7833844f3ac1
+          created: 1750426334290
+          modified: 1750430008483
+          isPrivate: false
+          sortKey: -1750423949852
+        method: DELETE
+        parameters:
+          - id: pair_cb420fcf0dac406593ef82dc8ac51a60
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: id
+            value: "6"
+      - url: "{{ _.url }}/ads/:id"
+        name: Read
+        meta:
+          id: req_ea608dbc7ebf4f2aad97c15fb0efc700
+          created: 1750428467322
+          modified: 1750429993074
+          isPrivate: false
+          sortKey: -1750423950027
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: id
+            value: "7"
+  - name: Response
+    meta:
+      id: fld_077da38d76f344c5b0977da8da753a38
+      created: 1750428028787
+      modified: 1750428034664
+      sortKey: -1750428028787
+    children:
+      - url: "{{ _.url }}/response"
+        name: Get all my response
+        meta:
+          id: req_600df23bfd77453885806e3daf7fa6a4
+          created: 1750428031323
+          modified: 1750429981197
+          isPrivate: false
+          sortKey: -1750428241678
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/response"
+        name: Create
+        meta:
+          id: req_792c334db65d495ebced90644f296d2c
+          created: 1750428061440
+          modified: 1750428324451
+          isPrivate: false
+          sortKey: -1750428241728
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "adId": 7,
+              "message": "Ещё продаёте?"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/response/:id"
+        name: Delete
+        meta:
+          id: req_cbea277dcbb544ccbef660e73c909c1c
+          created: 1750428215627
+          modified: 1750429985572
+          isPrivate: false
+          sortKey: -1750428215627
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: id
+            value: "1"
+      - url: "{{ _.url }}/response/:id"
+        name: Update
+        meta:
+          id: req_d4e4f6d4c5624ca5b3c8beeb259da016
+          created: 1750428241628
+          modified: 1750429982450
+          isPrivate: false
+          sortKey: -1750428241628
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"message": "Исправлено"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: id
+            value: "2"
+      - url: "{{ _.url }}/response/:id"
+        name: Read
+        meta:
+          id: req_1593a38ea8674a7db38b2bcd045805e7
+          created: 1750428388904
+          modified: 1750429975577
+          isPrivate: false
+          sortKey: -1750428241703
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: id
+            value: "3"
+  - url: "{{ _.url }}/auth/login"
+    name: Login
+    meta:
+      id: req_48b05cf9d8ee4ea980837c22d1dcd74c
+      created: 1750421908750
+      modified: 1750430308836
+      isPrivate: false
+      sortKey: -1750430295270
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "admin",
+          "password": "12345678"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.url }}/auth/logout"
+    name: Logout
+    meta:
+      id: req_2865704a0e864a2881b1dffaad4e5af2
+      created: 1750430295170
+      modified: 1750430330398
+      isPrivate: false
+      sortKey: -1750430295170
+    method: POST
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_621a17da74d6446c7080326e0d39d301c5974ae7
+    created: 1750421904373
+    modified: 1750430331843
+  cookies:
+    - key: token
+      maxAge: 0
+      domain: localhost
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-06-20T14:38:11.548Z
+      lastAccessed: 2025-06-20T14:38:51.843Z
+      sameSite: lax
+      id: 720f749f-7f98-440e-8e2f-41a3e060cea1
+environments:
+  name: Base Environment
+  meta:
+    id: env_621a17da74d6446c7080326e0d39d301c5974ae7
+    created: 1750421904371
+    modified: 1750421929141
+    isPrivate: false
+  data:
+    url: localhost:3000/api

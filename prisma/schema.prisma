@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+enum Role {
+  USER
+  MODERATOR
+  ADMIN
+}
+
+model User {
+  id        Int        @id @default(autoincrement())
+  email     String     @unique
+  name      String?
+  password  String
+  role      Role       @default(USER)
+  ads       Ad[]       @relation("UserAds")
+  responses Response[]
+}
+
+model Category {
+  id    Int    @id @default(autoincrement())
+  name  String
+  ads   Ad[]
+}
+
+model Ad {
+  id          Int       @id @default(autoincrement())
+  authorId    Int
+  title       String
+  description String?
+  categoryId  Int?
+  price       Float?
+  date        DateTime  @default(now())
+
+  author      User      @relation("UserAds", fields: [authorId], references: [id])
+  category    Category? @relation(fields: [categoryId], references: [id])
+  responses   Response[]
+}
+
+model Response {
+  id        Int    @id @default(autoincrement())
+  adId      Int
+  userId    Int
+  message   String
+
+  ad        Ad     @relation(fields: [adId], references: [id])
+  user      User   @relation(fields: [userId], references: [id])
+}
