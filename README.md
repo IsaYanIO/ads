@@ -16,6 +16,7 @@ https://nodejs.org/en
 
 ```
 npm install
+При возникновении ошибки пропишите сначала "Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned"
 ```
 
 Генерация клиента Prisma
@@ -53,6 +54,7 @@ $2b$10$QRqib43G528vDM4wF1Ialu3X3yT2Oty0BNcciMOykjl4clWC0UK2K - пароль 1234
 ## Тестирование API (Insomnia)
 
 API реализовано на Next.js и протестировано через **Insomnia**.
+Скачать Insomnia можно по ссылке "https://insomnia.rest/download", затем нужно авторизоваться
 
 ### Импорт коллекции
 
