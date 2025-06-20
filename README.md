@@ -16,7 +16,14 @@ https://nodejs.org/en
 
 ```
 npm install
-При возникновении ошибки пропишите сначала "Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned"
+
+```
+
+При возникновении ошибки c npm install пропишите сначала
+
+```
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
 ```
 
 Генерация клиента Prisma
